@@ -33,11 +33,11 @@ Since this is the first time you are connecting to the server, this is nothing t
 After this you will be prompted to enter your password. Note that you will not be able to see your as you type it in the terminal.
 
 One you do that, you're all set! From here you can try all sorts of commands:
-*cd~
-*cd
-*ls -lat
-*ls -a
-*ls <directory>
+* cd~
+* cd
+* ls -lat
+* ls -a
+* ls <directory>
 
 When you wish to exit either press Ctrl-D or run the command `exit`. Here is me running a few commands on my own and then logging out of the remote server
 
