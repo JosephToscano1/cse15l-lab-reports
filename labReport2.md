@@ -49,8 +49,63 @@ The program tested in this blog will be the `reverseInPlace()` method of the pro
 
 <img width="335" alt="Screenshot_20230127_060107" src="https://user-images.githubusercontent.com/97120058/215236368-aad0b51e-0503-4ea1-9dd6-f19c5ebb58c7.png">
 
+The following test is a failure-inducing input for the program
 
+```
+@Test
+public void testReverseInPlaceLong(){
+  int[] input = {1, 2, 3, 4, 5}
+  ArrayExamples.reverseInPlcae(input)
+  assertArrayEquals(new int[]{5, 4, 3, 2, 1}, input);
+}
+```
+This test does not induce a failure
 
+```
+@Test
+public void testReverseInPlace(){
+  int[] input1 = {3};
+  ArrayExamples.reverseInPlace(input1)
+  assertArrayEquals(new int[]{3}, input1);
+}
+```
+After running both of these tests, the following is displayed on the console
 
+<img width="594" alt="Screenshot_20230127_061512" src="https://user-images.githubusercontent.com/97120058/215236933-4b262eaf-fa76-4378-8036-29e74f296c61.png">
 
+The issue with this program is that the array contents are being changed while the reversal is still taking place leading to error.
+This is fixed by adding an array that stores the old contents of the original input array.
+
+Before bug is resolved:
+
+```
+static void reverseInPlace(int[] arr) {
+  for(int i = 0; i<arr.length; i += 1) {
+    arr[i] = arr[arr.length - i - 1];
+  }
+}
+```
+
+After bug has been resolved:
+
+```
+static void reverseInPlace(int[] arr) {
+  int[] template = new int[arr.length];
+  for(int i = 0; i<template.length; i++)
+  {
+    template[i] = arr[i];
+  }
+  for(int i = 0; i<arr.length; i += 1) {
+    arr[i] = template[arr.length - i - 1];
+  }
+}
+```
+Proof that the bug has been fixed:
+
+<img width="251" alt="Screenshot_20230127_062249" src="https://user-images.githubusercontent.com/97120058/215237328-ba405039-ae0c-4918-970a-e2828985af9d.png">
+
+## Closing Thoughts
+
+In the lab during week 2, it was really intriguing to learn about how to deploy a web server and how the code that handles url commands is made. 
+It was fascinating to see the connections made between what's in a url and the program of a web page itself.
 
