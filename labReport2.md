@@ -41,4 +41,16 @@ The following methods are called
 Because the server is already started abd deployed, there is no need to call Server.start() again.
 Other than that, the code that is called and procedure for adding an additional message is the same as adding the first.
 
+##Troubleshooting Bugs with JUnit
+
+Here I will provide a sample program that contains bugs along with another program that utilizes JUnit to pass failure-inducing input to the buggy program.
+
+The program tested in this blog will be the `reverseInPlace()` method of the program `ArrayExamples.java` with the contents below
+
+<img width="335" alt="Screenshot_20230127_060107" src="https://user-images.githubusercontent.com/97120058/215236368-aad0b51e-0503-4ea1-9dd6-f19c5ebb58c7.png">
+
+
+
+
+
 
