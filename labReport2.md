@@ -38,10 +38,13 @@ The following methods are called
 * url.getPath()
 * url.getQuery()
 
+url.getPath() would return the path part of a url, in other words, the part of a url that does not contain the domain name.
+url.getQuery would return the specific part of the path that contained the query denoted by `?`
+
 Because the server is already started abd deployed, there is no need to call Server.start() again.
 Other than that, the code that is called and procedure for adding an additional message is the same as adding the first.
 
-##Troubleshooting Bugs with JUnit
+## Troubleshooting Bugs with JUnit
 
 Here I will provide a sample program that contains bugs along with another program that utilizes JUnit to pass failure-inducing input to the buggy program.
 
@@ -97,6 +100,18 @@ static void reverseInPlace(int[] arr) {
   }
   for(int i = 0; i<arr.length; i += 1) {
     arr[i] = template[arr.length - i - 1];
+  }
+}
+```
+Another approach that takes up less space:
+
+```
+static void reverseInPlace(int[] arr) {
+  
+  for(int i = 0; i<arr.length/2; i += 1) {
+    int temp = arr[i];
+    arr[i] = arr[arr.length - i - 1];
+    arr[arr.length - i - 1] = temp;
   }
 }
 ```
