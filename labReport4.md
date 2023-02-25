@@ -5,7 +5,7 @@ Similar to how java can be used as a command line tool as opposed to in a visual
 git can be operated entirely from the terminal of a machine, which is helpful when making small scale changes
 or working remotely. 
 
-In this lab I utilized git along shortcuts in the command terminal to speedily make a small
+In this lab I utilized git along with shortcuts in the command terminal to speedily make a small
 edit to a file in the lab7 respository which I had forked on my GitHub account.
 
 These are the following steps executed:
